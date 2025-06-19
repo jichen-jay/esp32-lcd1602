@@ -1,0 +1,27 @@
+[package]
+name = "lcd_i2c_rs"
+version = "1.0.1"
+authors = ["EphraimShikanga <ephraimshikanga@gmail.com>"]
+edition = "2021"
+resolver = "2"
+rust-version = "1.77"
+categories = ["embedded", "hardware-support"]
+keywords = ["embedded", "hal", "idf", "esp-idf", "esp32"]
+description = "A Rust library for interfacing with I2C LCDs on the ESP32 using the ESP-IDF HAL."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/EphraimShikanga/lcd_i2c_rs"
+readme = "README.md"
+documentation = "https://docs.rs/lcd_i2c_rs/1.0.0/lcd_i2c_rs/"
+
+
+[lib]
+path = "src/lib.rs"
+harness = false
+
+
+[dependencies]
+esp-idf-hal = { version = "0.44.1", default-features = false }
+anyhow = "1.0.90"
+
+[build-dependencies]
+embuild = "0.32.0"
