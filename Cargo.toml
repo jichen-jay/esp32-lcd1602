@@ -1,5 +1,5 @@
 [package]
-name = "esp32-template"
+name = "esp32-lcd1602"
 version = "0.1.0"
 edition = "2021"
 
