@@ -1,0 +1,54 @@
+{
+    // Basic Rust development settings for ESP toolchain projects
+    // Tell rust-analyzer about the target (required for ESP)
+    "rust-analyzer.cargo.target": "riscv32imac-unknown-none-elf",
+    // Disable features that often cause issues with ESP toolchain
+    "rust-analyzer.checkOnSave.enable": false,
+    "rust-analyzer.cargo.buildScripts.enable": false,
+    "rust-analyzer.procMacro.enable": false,
+    // Basic IntelliSense
+    "rust-analyzer.completion.enable": true,
+    "rust-analyzer.completion.autoimport.enable": true,
+    "rust-analyzer.completion.postfix.enable": true,
+    // Formatting - this should work fine with ESP toolchain
+    "editor.formatOnSave": true,
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    },
+    "rust-analyzer.rustfmt.overrideCommand": [
+        "rustfmt",
+        "--edition=2021"
+    ],
+    // Basic hover and hints
+    "rust-analyzer.hover.enable": true,
+    "rust-analyzer.hover.documentation.enable": false, // Disable to avoid crashes
+    "rust-analyzer.inlayHints.enable": true,
+    "rust-analyzer.inlayHints.typeHints.enable": true,
+    "rust-analyzer.inlayHints.parameterHints.enable": true,
+    // Syntax highlighting
+    "rust-analyzer.syntaxHighlighting.enable": true,
+    // Simple diagnostics
+    "rust-analyzer.diagnostics.enable": true,
+    "rust-analyzer.diagnostics.experimental.enable": false,
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro",
+        "unresolved-import"
+    ],
+    // ESP-specific: Don't let rust-analyzer try to build std
+    "rust-analyzer.cargo.noDefaultFeatures": false,
+    "rust-analyzer.cargo.allFeatures": false,
+    // Optional: Nicer editing experience
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.rulers": [
+        100
+    ],
+    // Optional: Better visibility
+    "editor.renderWhitespace": "selection",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "cmake.sourceDirectory": "/home/jaykchen/projects/esp32-template/i2s_codec/i2s_es7210_tdm/main"
+}
